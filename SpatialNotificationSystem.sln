@@ -4,6 +4,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7EC1DC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Source\WebApi\WebApi.csproj", "{68CE26B7-009F-4A37-A482-99EE6B49CCAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Source\Domain\Domain.csproj", "{C38F18E5-1969-43AE-A116-32E19A60E1B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +16,13 @@ Global
 		{68CE26B7-009F-4A37-A482-99EE6B49CCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68CE26B7-009F-4A37-A482-99EE6B49CCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68CE26B7-009F-4A37-A482-99EE6B49CCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C38F18E5-1969-43AE-A116-32E19A60E1B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38F18E5-1969-43AE-A116-32E19A60E1B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38F18E5-1969-43AE-A116-32E19A60E1B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38F18E5-1969-43AE-A116-32E19A60E1B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68CE26B7-009F-4A37-A482-99EE6B49CCAE} = {7EC1DC7D-B2D5-4B82-9112-D164250DFD4B}
+		{C38F18E5-1969-43AE-A116-32E19A60E1B2} = {7EC1DC7D-B2D5-4B82-9112-D164250DFD4B}
 	EndGlobalSection
 EndGlobal

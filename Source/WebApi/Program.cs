@@ -1,3 +1,4 @@
+using Domain.Entites;
 using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
 
@@ -41,28 +42,6 @@ app.MapPost("/notifications", async (CreateNotificationDto dto, DataContext db) 
 });
 
 app.Run();
-
-public abstract class BaseEntity
-{
-    public Guid Id { get; set; } = Guid.Empty;
-    public Guid InstanceGuid { get; } = Guid.NewGuid();
-}
-
-public abstract class BaseAuditableEntity : BaseEntity
-{
-    public DateTime CreatedAtUtc { get; set; } = DateTime.MinValue;
-    public Guid? CreatedBy { get; set; } = Guid.Empty;
-    public DateTime ModifiedAtUtc { get; set; } = DateTime.MinValue;
-    public Guid? ModifiedBy { get; set; } = Guid.Empty;
-}
-
-public class Notification : BaseAuditableEntity
-{
-    public string Message { get; set; } = string.Empty;
-    public Point Location { get; set; } = Point.Empty;
-
-    public override string ToString() => $"{Id} {Location.X} {Location.Y} {Message}";
-}
 
 public record CreateNotificationDto
 {
