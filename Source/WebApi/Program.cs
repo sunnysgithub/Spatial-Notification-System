@@ -5,6 +5,10 @@ using NetTopologySuite.Geometries;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddApplicationServices();
 
 builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -12,6 +16,12 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.MapGet("/", () => "Spatial Notification System");
 
@@ -36,6 +46,8 @@ app.MapPost("/notifications", async (CreateNotificationDto dto, ApplicationDbCon
     await db.SaveChangesAsync();
     return Results.Ok();
 });
+
+
 
 app.Run();
 
